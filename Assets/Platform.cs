@@ -21,7 +21,7 @@ public class Platform : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.relativeVelocity.magnitude > 1.5f && shouldCheckForCollision)
+        if (collision.relativeVelocity.magnitude > 2f && shouldCheckForCollision)
         {
             Destroy(collision.gameObject);
             Debug.Log("You have CRASHED!");
