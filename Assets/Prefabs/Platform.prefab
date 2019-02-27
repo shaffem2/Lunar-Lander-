@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 12960437860723046}
   - component: {fileID: 5642312089716603350}
   - component: {fileID: 8896524993390317833}
+  - component: {fileID: 1325022011}
+  - component: {fileID: 8069336297502841634}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -91,3 +93,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &1325022011
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761143762613061784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5, z: 1}
+  m_Center: {x: 0, y: 0.75, z: 0}
+--- !u!114 &8069336297502841634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761143762613061784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfcf247bfabfb624b9c93043b681394b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStartingPlatform: 1
+  collider: {fileID: 8896524993390317833}

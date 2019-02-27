@@ -22,7 +22,7 @@ public class Ship : MonoBehaviour
     {
         if (Input.GetAxis("Vertical") > 0.01f)
         {
-            rigidShip.AddForce(transform.up * 20.0f);
+            rigidShip.AddForce(transform.up * 10.0f);
         }
 
         if (Input.GetAxis("Horizontal") > 0.01f || Input.GetAxis("Horizontal") < 0.01f)
