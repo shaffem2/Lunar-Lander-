@@ -23,6 +23,7 @@ public class Platform : MonoBehaviour
     {
         if (collision.relativeVelocity.magnitude > 2f && shouldCheckForCollision)
         {
+            StartCoroutine(GameObject.Find("GameManager").GetComponent<GameManager>().Restart()); // Calls level restart function
             Destroy(collision.gameObject);
             Debug.Log("You have CRASHED!");
         }
