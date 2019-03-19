@@ -8,6 +8,6 @@ public class GameManager : MonoBehaviour
     public IEnumerator Restart()           // Level restart function
     {
         yield return new WaitForSeconds(1.0f);  // Waits 1 second
-        SceneManager.LoadScene("Game");         // Reloads "Game" scene
+        SceneManager.LoadScene("Level1");         // Reloads "Game" scene
     }
 }
