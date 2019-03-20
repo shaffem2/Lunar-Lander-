@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class wall : MonoBehaviour
+public class Wall : MonoBehaviour
 {
     public bool isStartingPlatform = false;
     public Collider collider;
