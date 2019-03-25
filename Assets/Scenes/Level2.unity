@@ -1410,11 +1410,11 @@ PrefabInstance:
     - target: {fileID: 1715442494, guid: aefbf664e0b6c554a8a122b322e90363, type: 3}
       propertyPath: LeftThruster
       value: 
-      objectReference: {fileID: 2006957964}
+      objectReference: {fileID: 1018434038}
     - target: {fileID: 1715442494, guid: aefbf664e0b6c554a8a122b322e90363, type: 3}
       propertyPath: RightThruster
       value: 
-      objectReference: {fileID: 1018434038}
+      objectReference: {fileID: 2006957964}
     - target: {fileID: 161256057, guid: aefbf664e0b6c554a8a122b322e90363, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.24

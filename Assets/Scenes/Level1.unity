@@ -664,6 +664,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship
       objectReference: {fileID: 0}
+    - target: {fileID: 8224214084152657325, guid: aefbf664e0b6c554a8a122b322e90363,
+        type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472507733386399822, guid: aefbf664e0b6c554a8a122b322e90363,
+        type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1715442499, guid: aefbf664e0b6c554a8a122b322e90363, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8
@@ -715,26 +725,16 @@ PrefabInstance:
     - target: {fileID: 1715442494, guid: aefbf664e0b6c554a8a122b322e90363, type: 3}
       propertyPath: LeftThruster
       value: 
-      objectReference: {fileID: 1734592059}
+      objectReference: {fileID: 40783435}
     - target: {fileID: 1715442494, guid: aefbf664e0b6c554a8a122b322e90363, type: 3}
       propertyPath: RightThruster
       value: 
-      objectReference: {fileID: 40783435}
+      objectReference: {fileID: 1734592059}
     - target: {fileID: 1715442494, guid: aefbf664e0b6c554a8a122b322e90363, type: 3}
       propertyPath: rigidShip
       value: 
       objectReference: {fileID: 1035609704}
-    - target: {fileID: 8224214084152657325, guid: aefbf664e0b6c554a8a122b322e90363,
-        type: 3}
-      propertyPath: prewarm
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2664570432033241660, guid: aefbf664e0b6c554a8a122b322e90363,
-        type: 3}
-      propertyPath: prewarm
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3472507733386399822, guid: aefbf664e0b6c554a8a122b322e90363,
         type: 3}
       propertyPath: prewarm
       value: 0
