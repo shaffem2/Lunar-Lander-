@@ -908,6 +908,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300002, guid: d9808401c68af274a8edfbed3d1b53c7, type: 3}
+    - target: {fileID: 886276788, guid: 6e55dbb3d77251244b75603b9d57b58c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a2ceb2db438bc9a43ae7bbc75d4c4e92, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e55dbb3d77251244b75603b9d57b58c, type: 3}
 --- !u!1 &1239167407
