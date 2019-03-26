@@ -8,6 +8,7 @@ public class Ship : MonoBehaviour
     public ParticleSystem BottomThruster;
     public ParticleSystem LeftThruster;
     public ParticleSystem RightThruster;
+    public ParticleSystem Explosion;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +63,11 @@ public class Ship : MonoBehaviour
         else if (RightThruster.isPlaying && Input.GetAxis("Horizontal") > -0.01f)
         {
             RightThruster.Stop();
+        }
+
+        if (GameObject.Find("Ship") != null)
+        {
+            Explosion.Stop();
         }
     }
 }
