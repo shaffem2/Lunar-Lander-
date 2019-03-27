@@ -9,6 +9,7 @@ public class Ship : MonoBehaviour
     public ParticleSystem LeftThruster;
     public ParticleSystem RightThruster;
     public ParticleSystem Explosion;
+    public GameObject explosion2; 
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,18 @@ public class Ship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GameObject.Find("Ship") != null)
+        {
+            Explosion.Stop();
+        }
+    }
+
+    public IEnumerator ShipGoBoom()  //this function takes a life away
+    {
+        GameObject expl = Instantiate(explosion2, transform.position, Quaternion.identity) as GameObject;
+        Destroy(gameObject); // destroy the grenade 
+        Destroy(expl, 3); // delete the explosion after 3 seconds
+        yield return new WaitForSeconds(1.0f);  // Waits 1 second
     }
 
     private void FixedUpdate()
@@ -65,9 +77,6 @@ public class Ship : MonoBehaviour
             RightThruster.Stop();
         }
 
-        if (GameObject.Find("Ship") != null)
-        {
-            Explosion.Stop();
-        }
+
     }
 }

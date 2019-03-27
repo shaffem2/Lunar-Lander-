@@ -25,9 +25,10 @@ public class Platform : MonoBehaviour
     {
         if (collision.relativeVelocity.magnitude > 2f && shouldCheckForCollision)
         {
+            StartCoroutine(GameObject.Find("Ship").GetComponent<Ship>().ShipGoBoom());            // Calls function to blow up the ship
             StartCoroutine(GameObject.Find("PlayerLives").GetComponent<PlayerLives>().TakeLife());// Calls function to take a life away
             StartCoroutine(GameObject.Find("GameManager").GetComponent<GameManager>().Restart()); // Calls level restart function
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
             Debug.Log("You have CRASHED!");
         }
     }
