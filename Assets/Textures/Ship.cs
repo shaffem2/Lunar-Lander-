@@ -26,10 +26,10 @@ public class Ship : MonoBehaviour
         }
     }
 
-    public IEnumerator ShipGoBoom()  //this function takes a life away
+    public IEnumerator ShipGoBoom()  //this function destroys the ship with an explosion
     {
         GameObject expl = Instantiate(explosion2, transform.position, Quaternion.identity) as GameObject;
-        Destroy(gameObject); // destroy the grenade 
+        Destroy(gameObject); // destroy the ship
         Destroy(expl, 3); // delete the explosion after 3 seconds
         yield return new WaitForSeconds(1.0f);  // Waits 1 second
     }
