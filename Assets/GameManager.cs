@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public IEnumerator Restart()           // Level restart function
     {
-        yield return new WaitForSeconds(2); // Waits 3 seconds  
+        yield return new WaitForSeconds(3); // Waits 3 seconds  
 
         if (GameObject.Find("PlayerLives").GetComponent<PlayerLives>().lives < 0) //if there are no more lives left, load main menu and reset life counter
         {

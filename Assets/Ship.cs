@@ -18,6 +18,7 @@ public class Ship : MonoBehaviour
     }
 
     // Update is called once per frame
+    
     void Update()
     {
         if (GameObject.Find("Ship") != null)
@@ -25,7 +26,7 @@ public class Ship : MonoBehaviour
             Explosion.Stop();
         }
     }
-
+    
     public IEnumerator ShipGoBoom()  //this function destroys the ship with an explosion
     {
         GameObject expl = Instantiate(explosion2, transform.position, Quaternion.identity) as GameObject;
