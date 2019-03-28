@@ -9,7 +9,7 @@ public class Ship : MonoBehaviour
     public ParticleSystem LeftThruster;
     public ParticleSystem RightThruster;
     public ParticleSystem Explosion;
-    public GameObject explosion2; 
+    public GameObject explosion2;
 
     // Start is called before the first frame update
     void Start()
@@ -18,13 +18,13 @@ public class Ship : MonoBehaviour
     }
 
     // Update is called once per frame
-    
+
     void Update()
     {
-        if (GameObject.Find("Ship") != null)
-        {
-            Explosion.Stop();
-        }
+            if (GameObject.Find("Ship") != null)
+            {
+                Explosion.Stop();
+            }
     }
     
     public IEnumerator ShipGoBoom()  //this function destroys the ship with an explosion
