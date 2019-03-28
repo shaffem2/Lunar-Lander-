@@ -14,7 +14,7 @@ public class Ship : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class Ship : MonoBehaviour
         GameObject expl = Instantiate(explosion2, transform.position, Quaternion.identity) as GameObject;
         Destroy(gameObject); // destroy the ship
         Destroy(expl, 3); // delete the explosion after 3 seconds
-        yield return new WaitForSeconds(1.0f);  // Waits 1 second
+        yield return new WaitForSeconds(1);  // Waits 1 second
     }
 
     private void FixedUpdate()
