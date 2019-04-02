@@ -225,11 +225,9 @@ GameObject:
   m_Component:
   - component: {fileID: 494976}
   - component: {fileID: 617719595764684366}
-  - component: {fileID: 2954644341400011373}
   - component: {fileID: 6867317173237072805}
   - component: {fileID: 2160677548986707314}
   - component: {fileID: 735873105}
-  - component: {fileID: 3910359700127118393}
   m_Layer: 0
   m_Name: Asteroid 1
   m_TagString: Enemy
@@ -266,20 +264,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStartingPlatform: 0
   collider: {fileID: 0}
---- !u!64 &2954644341400011373
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151664}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: d03d0c597bb388947bf16f564153364a, type: 3}
 --- !u!54 &6867317173237072805
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -322,25 +306,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3910359700127118393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1956d3991a6307d45ac0d4fbbda8bb51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  maxThrust: 20
-  rigbod: {fileID: 6867317173237072805}
-  screenTop: 328
-  screenBottom: -328
-  screenRight: 427
-  screenLeft: -427
 --- !u!1 &176588
 GameObject:
   m_ObjectHideFlags: 0
