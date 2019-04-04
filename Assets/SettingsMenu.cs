@@ -8,8 +8,9 @@ public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public Dropdown resolutionDropdown;
-    private Resolution[] resolutions; // Array of available resolutions
-    
+    //Resolution[] resolutions; // Array of available resolutions
+    Resolution[] resolutions;
+
     void Start()
     {
         resolutions = Screen.resolutions; // Obtains list of all available resolutions for user's computer
@@ -23,8 +24,8 @@ public class SettingsMenu : MonoBehaviour
             options.Add(option);
 
             // Determines your computer's current resolution
-            if (resolutions[i].width == Screen.width &&
-                resolutions[i].height == Screen.height)
+            if (resolutions[i].width == Screen.currentResolution.width &&
+                resolutions[i].height == Screen.currentResolution.height)
             {
                 currentResolutionIndex = i;
             }
@@ -43,14 +44,13 @@ public class SettingsMenu : MonoBehaviour
     //Sets game quality (Low/Medium/High)
     public void SetQuality (int qualityIndex)
     {
-
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
     // Toggles fullscreen
-    public void SetFullscreen (bool isFullScreen)
+    public void SetFullscreen (bool isFullscreen)
     {
-        Screen.fullScreen = isFullScreen;
+        Screen.fullScreen = isFullscreen;
     }
 
     // Sets screen resolution for game
