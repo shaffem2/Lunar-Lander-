@@ -9,11 +9,12 @@ public class Ship : MonoBehaviour
     public ParticleSystem LeftThruster;
     public ParticleSystem RightThruster;
     public ParticleSystem DestructionEffect;
+    public AudioSource source;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,11 +37,14 @@ public class Ship : MonoBehaviour
         explosionEffect.loop = false;
         explosionEffect.Play();
 
+        //source.PlayOneShot(crashAudio, 2F);
+
         //destroy the particle system when its duration is up, right
         //it would play a second time.
         Destroy(explosionEffect.gameObject, explosionEffect.duration);
         //destroy our game object
         Destroy(gameObject);
+
         yield return new WaitForSeconds(1);
 
     }
@@ -95,6 +99,15 @@ public class Ship : MonoBehaviour
             RightThruster.Stop();
         }
 
+        if ((LeftThruster.isPlaying || RightThruster.isPlaying || BottomThruster.isPlaying) && !source.isPlaying)
+        {
+            source.Play();
+        }
+
+        else if ((!LeftThruster.isPlaying || !RightThruster.isPlaying || !BottomThruster.isPlaying) && source.isPlaying)
+        {
+            source.Stop();
+        }
 
     }
 }
