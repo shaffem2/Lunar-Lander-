@@ -1586,6 +1586,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5e32cd41d54476b449189569a2c920ec, type: 2}
+    - target: {fileID: 5789025332607106938, guid: 0d3447c405bf5d541a61897b33ada19d,
+        type: 3}
+      propertyPath: explosionAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: c3a36fa13a9007b4baf6bb7befd64b71, type: 3}
+    - target: {fileID: 5789025332607106938, guid: 0d3447c405bf5d541a61897b33ada19d,
+        type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789025332607106938, guid: 0d3447c405bf5d541a61897b33ada19d,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d3447c405bf5d541a61897b33ada19d, type: 3}
 --- !u!4 &823293218 stripped
