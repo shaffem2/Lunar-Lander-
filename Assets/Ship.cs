@@ -10,21 +10,22 @@ public class Ship : MonoBehaviour
     public ParticleSystem RightThruster;
     public ParticleSystem DestructionEffect;
     public AudioSource source;
+    public AudioClip thrusterAudio;
 
     void Awake()
     {
-
         source = GetComponent<AudioSource>();
+        source.clip = thrusterAudio;
     }
 
     // Update is called once per frame
 
     void Update()
     {
-           // if (GameObject.Find("Ship") != null)
-           // {
-           //     Explosion.Stop();
-           // }
+        // if (GameObject.Find("Ship") != null)
+        // {
+        //     Explosion.Stop();
+        // }
     }
     
     public IEnumerator ShipGoBoom()  //this function destroys the ship with an explosion
@@ -98,16 +99,18 @@ public class Ship : MonoBehaviour
         {
             RightThruster.Stop();
         }
-
-        if ((LeftThruster.isPlaying || RightThruster.isPlaying || BottomThruster.isPlaying) && !source.isPlaying)
+ 
+        // Plays thruster audio when ship is moving
+        if(Input.GetAxis("Vertical") > 0 || Input.GetAxis("Horizontal") != 0)
         {
-            source.Play();
+            if(!source.isPlaying)
+            {
+                source.Play();
+            }
         }
-
-        else if ((!LeftThruster.isPlaying || !RightThruster.isPlaying || !BottomThruster.isPlaying) && source.isPlaying)
+        else if(source.isPlaying)
         {
             source.Stop();
         }
-
     }
 }

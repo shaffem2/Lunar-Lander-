@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.115142755, g: 0.10438604, b: 0.11568818, a: 1}
+  m_IndirectSpecularColor: {r: 0.116199546, g: 0.104381986, b: 0.11669483, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -521,9 +521,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: c466ad86993325b42b8256e43e2cee25,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: d7c9eb3c5c2cd2d42b558ed29d3d732e, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -717,7 +717,7 @@ Transform:
   m_LocalScale: {x: 22.486618, y: 22.486618, z: 22.486618}
   m_Children: []
   m_Father: {fileID: 517431453}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &306026680
 MonoBehaviour:
@@ -958,7 +958,7 @@ Transform:
   m_LocalScale: {x: 22.486618, y: 22.486618, z: 22.486618}
   m_Children: []
   m_Father: {fileID: 517431453}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &500395178
 MonoBehaviour:
@@ -972,7 +972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 263a16f560767f24780990fb505c0921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crashAudio: {fileID: 8300000, guid: c3a36fa13a9007b4baf6bb7befd64b71, type: 3}
+  crashAudio: {fileID: 8300000, guid: 5b8df81fe5453344c9475578dca1e09c, type: 3}
 --- !u!82 &500395179
 AudioSource:
   m_ObjectHideFlags: 0
@@ -982,10 +982,11 @@ AudioSource:
   m_GameObject: {fileID: 500395176}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: c466ad86993325b42b8256e43e2cee25,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -999,7 +1000,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 1
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1159,11 +1160,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 306026678}
+  - {fileID: 500395177}
   - {fileID: 791377693}
   - {fileID: 2008914702}
   - {fileID: 1319332755}
-  - {fileID: 306026678}
-  - {fileID: 500395177}
   - {fileID: 489033648}
   - {fileID: 606010255}
   - {fileID: 1536001043}
@@ -1560,7 +1561,7 @@ PrefabInstance:
     - target: {fileID: 6683501170293622579, guid: e15e191d267c4474caa32545b1e86204,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6683501170293622579, guid: e15e191d267c4474caa32545b1e86204,
         type: 3}
@@ -2260,11 +2261,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 150200591, guid: 0d3447c405bf5d541a61897b33ada19d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -209.2
+      value: -210.9
       objectReference: {fileID: 0}
     - target: {fileID: 150200591, guid: 0d3447c405bf5d541a61897b33ada19d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 145.3
+      value: 145.7
       objectReference: {fileID: 0}
     - target: {fileID: 150200591, guid: 0d3447c405bf5d541a61897b33ada19d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2288,7 +2289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 150200591, guid: 0d3447c405bf5d541a61897b33ada19d, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 150200591, guid: 0d3447c405bf5d541a61897b33ada19d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2325,6 +2326,11 @@ PrefabInstance:
     - target: {fileID: 5789025332607106938, guid: 0d3447c405bf5d541a61897b33ada19d,
         type: 3}
       propertyPath: thrusterAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: d7c9eb3c5c2cd2d42b558ed29d3d732e, type: 3}
+    - target: {fileID: 5789025332607106938, guid: 0d3447c405bf5d541a61897b33ada19d,
+        type: 3}
+      propertyPath: thrustAudio
       value: 
       objectReference: {fileID: 8300000, guid: d7c9eb3c5c2cd2d42b558ed29d3d732e, type: 3}
     m_RemovedComponents: []
@@ -2595,7 +2601,7 @@ PrefabInstance:
     - target: {fileID: 6683501170293622579, guid: e15e191d267c4474caa32545b1e86204,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6683501170293622579, guid: e15e191d267c4474caa32545b1e86204,
         type: 3}
