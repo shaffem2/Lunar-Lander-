@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlatformHard : MonoBehaviour
+public class PlatformEasy : MonoBehaviour
 {
     public Collider collider;
     bool shouldCheckForCollision = true;
@@ -12,15 +12,21 @@ public class PlatformHard : MonoBehaviour
 
     private IEnumerator OnTriggerStay(Collider other)
     {
-        if (Mathf.Abs(collider.bounds.center.x - other.gameObject.GetComponent<Collider>().bounds.center.x) <=
-            collider.bounds.extents.x - other.gameObject.GetComponent<Collider>().bounds.extents.x && shouldCheckForCollision)
+        yield return new WaitForSeconds(.3f);
+
+        if (GameObject.Find("Ship") == null)
         {
-            if (gameObject != null && (GameObject.Find("Ship").GetComponent<Rigidbody>().velocity == zero))
+            //adding this if statement fixes box collider error by not allowing the rest of the fuction to fire after the shit is destroyed
+        }
+
+        else if (Mathf.Abs(collider.bounds.center.x - other.gameObject.GetComponent<Collider>().bounds.center.x) <=
+                 collider.bounds.extents.x - other.gameObject.GetComponent<Collider>().bounds.extents.x && shouldCheckForCollision)
+        {
+            if (GameObject.Find("Ship").GetComponent<Rigidbody>().velocity == zero)
             {
                 stayStill = true;
-                yield return new WaitForSeconds(2.01f); // Fixes bug. Can't be less than 2
             }
-            
+
             else
             {
                 stayStill = false;
@@ -30,10 +36,11 @@ public class PlatformHard : MonoBehaviour
             {
                 Debug.Log("You have LANDED!");
                 shouldCheckForCollision = false;
-                StartCoroutine(GameObject.Find("GameManager").GetComponent<GameManager>().AddScore(1000));  // Calls fucntion to add score (500 points - easy platform)
+                StartCoroutine(GameObject.Find("GameManager").GetComponent<GameManager>().AddScore(1000));  // Calls fucntion to add score (1000 points - hard platform)
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //load next level
             }
         }
+
     }
 
     private void OnCollisionEnter(Collision collision)
