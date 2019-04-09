@@ -27,7 +27,7 @@ public class Ship : MonoBehaviour
         Destroy(explosionEffect.gameObject, explosionEffect.duration);
         Destroy(gameObject);
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0);
     }
 
 

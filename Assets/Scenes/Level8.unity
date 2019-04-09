@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.11529412, g: 0.104471646, b: 0.1155873, a: 1}
+  m_IndirectSpecularColor: {r: 0.116440006, g: 0.10446172, b: 0.116697334, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1388,7 +1388,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5e32cd41d54476b449189569a2c920ec, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8069336297502841634, guid: e15e191d267c4474caa32545b1e86204, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e15e191d267c4474caa32545b1e86204, type: 3}
 --- !u!4 &846050689 stripped
 Transform:
@@ -1396,6 +1397,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 846050688}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &846050690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8761143762613061784, guid: e15e191d267c4474caa32545b1e86204,
+    type: 3}
+  m_PrefabInstance: {fileID: 846050688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &846050691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846050690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a18accde9d5204b9d0eb0a7ad89cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &865008539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2406,15 +2425,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 56.149723
       objectReference: {fileID: 0}
-    - target: {fileID: 2160677548986707314, guid: 3213c7b1bb3df034daf65731fba399fc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6867317173237072805, guid: 3213c7b1bb3df034daf65731fba399fc,
         type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160677548986707314, guid: 3213c7b1bb3df034daf65731fba399fc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2954644341400011373, guid: 3213c7b1bb3df034daf65731fba399fc,
         type: 3}
@@ -3579,8 +3598,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b46524eb0cb6c4ea0f58b72de93183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartingPlatform: 0
-  collider: {fileID: 0}
+  collider: {fileID: 1826230098}
+--- !u!65 &1826230098 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 8896524993390317833, guid: e15e191d267c4474caa32545b1e86204,
+    type: 3}
+  m_PrefabInstance: {fileID: 1826230094}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1828128425
 GameObject:
   m_ObjectHideFlags: 0
@@ -4068,15 +4092,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 68.98466
       objectReference: {fileID: 0}
-    - target: {fileID: 2160677548986707314, guid: 3213c7b1bb3df034daf65731fba399fc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6867317173237072805, guid: 3213c7b1bb3df034daf65731fba399fc,
         type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160677548986707314, guid: 3213c7b1bb3df034daf65731fba399fc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2954644341400011373, guid: 3213c7b1bb3df034daf65731fba399fc,
         type: 3}
@@ -4313,15 +4337,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 49.69002
       objectReference: {fileID: 0}
-    - target: {fileID: 2160677548986707314, guid: 3213c7b1bb3df034daf65731fba399fc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6867317173237072805, guid: 3213c7b1bb3df034daf65731fba399fc,
         type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160677548986707314, guid: 3213c7b1bb3df034daf65731fba399fc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2954644341400011373, guid: 3213c7b1bb3df034daf65731fba399fc,
         type: 3}
