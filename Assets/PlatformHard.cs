@@ -20,7 +20,8 @@ public class PlatformHard : MonoBehaviour
                 stayStill = true;
                 yield return new WaitForSeconds(2.01f); // Fixes bug. Can't be less than 2
             }
-            else if (gameObject == null && ((GameObject.Find("Ship").GetComponent<Rigidbody>().velocity == zero) || (GameObject.Find("Ship").GetComponent<Rigidbody>().velocity != zero)))
+            
+            else
             {
                 stayStill = false;
             }
