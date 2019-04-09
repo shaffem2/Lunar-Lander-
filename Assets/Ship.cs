@@ -17,45 +17,19 @@ public class Ship : MonoBehaviour
         source = GetComponent<AudioSource>();
         source.clip = thrusterAudio;
     }
-
-    // Update is called once per frame
-
-    void Update()
-    {
-        // if (GameObject.Find("Ship") != null)
-        // {
-        //     Explosion.Stop();
-        // }
-    }
     
-    public IEnumerator ShipGoBoom()  //this function destroys the ship with an explosion
+    public IEnumerator ShipGoBoom()  //this function destroys the ship with an explosion effect
     {
-        //Instantiate our one-off particle system
-        ParticleSystem explosionEffect = Instantiate(DestructionEffect)
-                                         as ParticleSystem;
+        ParticleSystem explosionEffect = Instantiate(DestructionEffect) as ParticleSystem;
         explosionEffect.transform.position = transform.position;
-        //play it
         explosionEffect.loop = false;
         explosionEffect.Play();
-
-        //source.PlayOneShot(crashAudio, 2F);
-
-        //destroy the particle system when its duration is up, right
-        //it would play a second time.
         Destroy(explosionEffect.gameObject, explosionEffect.duration);
-        //destroy our game object
         Destroy(gameObject);
 
         yield return new WaitForSeconds(1);
-
     }
-    //{
-    //     GameObject expl = Instantiate(explosion2, transform.position, Quaternion.identity) as GameObject;
-    //    Explosion.Play();
-    //     Destroy(gameObject); // destroy the ship
-    //     Destroy(expl, 3); // delete the explosion after 3 seconds
-    //     yield return new WaitForSeconds(1);  // Waits 1 second
-    // }
+
 
     private void FixedUpdate()
     {

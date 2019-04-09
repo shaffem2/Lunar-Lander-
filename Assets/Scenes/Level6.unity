@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.116440006, g: 0.10446172, b: 0.116697334, a: 1}
+  m_IndirectSpecularColor: {r: 0.11529412, g: 0.104471646, b: 0.1155873, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -268,7 +268,7 @@ Transform:
   m_LocalScale: {x: 22.486618, y: 22.486618, z: 22.486618}
   m_Children: []
   m_Father: {fileID: 1956784703}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &52350064
 MonoBehaviour:
@@ -1804,50 +1804,6 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d7c9eb3c5c2cd2d42b558ed29d3d732e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d3447c405bf5d541a61897b33ada19d, type: 3}
---- !u!1 &658970643
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 658970645}
-  - component: {fileID: 658970644}
-  m_Layer: 0
-  m_Name: PlayerLives
-  m_TagString: playerlives
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &658970644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658970643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3101bf05148ab894b91758141bc8f2c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives: 3
---- !u!4 &658970645
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658970643}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.428768, y: 1.9581267, z: -0.12394064}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &677249502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2236,11 +2192,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842470595}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.4052787, y: 9.694965, z: -2024.9255}
-  m_LocalScale: {x: 22.486618, y: 22.486618, z: 22.486618}
+  m_LocalPosition: {x: -0.20142585, y: 1.3048761, z: 26.322468}
+  m_LocalScale: {x: 0.70713335, y: 0.70713335, z: 0.70713335}
   m_Children: []
-  m_Father: {fileID: 1956784703}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &842470597
 MonoBehaviour:
@@ -2254,6 +2210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320c1bcfb880a3444bc15e3ac6ce7ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  lives: 3
 --- !u!1001 &878772197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3549,6 +3507,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 34.377594
       objectReference: {fileID: 0}
+    - target: {fileID: 1921247425550919225, guid: 070d2727f2bc659478cc610431cfa9ee,
+        type: 3}
+      propertyPath: tumble
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6345439544450238575, guid: 070d2727f2bc659478cc610431cfa9ee,
         type: 3}
       propertyPath: m_Constraints
@@ -3558,11 +3521,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AngularDrag
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1921247425550919225, guid: 070d2727f2bc659478cc610431cfa9ee,
-        type: 3}
-      propertyPath: tumble
-      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 070d2727f2bc659478cc610431cfa9ee, type: 3}
@@ -4240,7 +4198,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 842470596}
   - {fileID: 52350063}
   - {fileID: 1940013840}
   - {fileID: 832014313}
