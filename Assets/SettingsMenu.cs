@@ -20,7 +20,8 @@ public class SettingsMenu : MonoBehaviour
         int currentResolutionIndex = 0;
         for (int i = 0; i < resolutions.Length; i++)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height; // Takes array of resolutions and converts them to list of strings
+
+            string option = resolutions[i].width + "x" + resolutions[i].height + " " + resolutions[i].refreshRate + "Hz"; // Takes array of resolutions and converts them to list of strings
             options.Add(option);
 
             // Determines your computer's current resolution
