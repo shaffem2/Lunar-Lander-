@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlatformEasy : MonoBehaviour
+public class PlatformHard : MonoBehaviour
 {
     public Collider collider;
     bool shouldCheckForCollision = true;
