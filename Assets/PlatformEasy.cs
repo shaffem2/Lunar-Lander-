@@ -36,7 +36,8 @@ public class PlatformEasy : MonoBehaviour
             {
                 Debug.Log("You have LANDED!");
                 shouldCheckForCollision = false;
-                StartCoroutine(GameObject.Find("GameManager").GetComponent<GameManager>().AddScore(500));  // Calls fucntion to add score (500 points - easy platform)
+                level.levelValue += 1; // Calls function to increment lvl
+                Score.scoreValue += 500; // Calls function to add score (500 points - easy platform)
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //load next level
             }
         }

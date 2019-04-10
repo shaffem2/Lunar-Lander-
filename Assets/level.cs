@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Score : MonoBehaviour
+public class level : MonoBehaviour
 {
-    public static int scoreValue;
-    Text score;
+    public static int levelValue=1;
+    Text lvl;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        score = GetComponent<Text>();
+        lvl = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        score.text = "Score: " + scoreValue; //Displays Score
+        lvl.text = "Level: " + levelValue; //Displays level
     }
 }
