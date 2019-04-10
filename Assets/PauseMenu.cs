@@ -34,7 +34,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     // Pauses the game
-    void Pause()
+    public void Pause()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;        // Stops time
@@ -47,6 +47,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;        // Starts time again. Unnecessary atm because no objects on main menu interact with time. Here for safety purposes.
         AudioListener.pause = false;
+        IsPaused = false;
         Debug.Log("Going to Main Menu!");
         GameObject.Find("GameManager").GetComponent<GameManager>().lives = 3; // Resets player lives when returning to Main Menu
         SceneManager.LoadScene("MainMenu");
