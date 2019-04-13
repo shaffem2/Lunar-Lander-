@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class Lives : MonoBehaviour
 {
-    Text lives;
+    Text livesText;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        lives = GetComponent<Text>();
+        livesText = GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -19,12 +19,12 @@ public class Lives : MonoBehaviour
     {
         if (GameObject.Find("GameManager").GetComponent<GameManager>().lives < 0)
         {
-            lives.text = "Lives: 0";                        //Prevents the life counter from going negative
+            livesText.text = "Lives: 0";                        //Prevents the lives counter from going negative
         }
 
         else
         {
-            lives.text = "Lives: " + GameObject.Find("GameManager").GetComponent<GameManager>().lives; //Displays level
+            livesText.text = "Lives: " + GameObject.Find("GameManager").GetComponent<GameManager>().lives; //Displays level
         }
     }
 }

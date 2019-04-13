@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int score;
+    public static int score;
     public int lives = 3;
 
     void Awake()  //This function stops the GameObject GameManager from being destroyed when a new scene is loaded or the scene is restarted upon death.
@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         if (lives < 0) // if there are no more lives left, load main menu and reset life counter
         {
             lives = 3;
+            score = 0;
             SceneManager.LoadScene("MainMenu");
         }
 

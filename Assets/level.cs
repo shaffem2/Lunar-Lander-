@@ -4,22 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class level : MonoBehaviour
+public class Level : MonoBehaviour
 {
-    public static int levelValue=1;
-    Text lvl;
-    Scene currentScene;
+    public static int level;
+    Text levelText;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        lvl = GetComponent<Text>();
-        Scene currentScene = SceneManager.GetActiveScene();
+        levelText = GetComponent<Text>();
+        level = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
     void Update()
     {
-        lvl.text = "Level: " + levelValue; //Displays level
+        levelText.text = "Level: " + level; //Displays level
     }
 }

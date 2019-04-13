@@ -36,12 +36,10 @@ public class PlatformHard : MonoBehaviour
             {
                 Debug.Log("You have LANDED!");
                 shouldCheckForCollision = false;
-                level.levelValue += 1; // Calls function to increment lvl
-                Score.scoreValue += 1000; // Calls fucntion to add score (1000 points - hard platform)
+                GameManager.score += 1000; // Calls fucntion to add score (1000 points - hard platform)
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //load next level
             }
         }
-
     }
 
     private void OnCollisionEnter(Collision collision)

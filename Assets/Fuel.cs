@@ -5,20 +5,20 @@ using UnityEngine.UI;
 
 public class Fuel : MonoBehaviour
 {
-    public static int fuelValue;
-    Text fuel;
+    public static int fuel;
+    Text fuelText;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        fuel = GetComponent<Text>();
+        fuelText = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        fuel.text = "Score: " + fuelValue; //Displays Fuel
+        fuelText.text = "Fuel: " + fuel; // Displays Fuel
     }
 }
 
