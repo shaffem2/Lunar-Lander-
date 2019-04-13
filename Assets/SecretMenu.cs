@@ -8,7 +8,6 @@ public class SecretMenu : MonoBehaviour
 {
     public static bool IsPaused = false;
     public GameObject secretMenu;
-    //public InputField input;
     private string inputString;
     private int inputNum;
 
@@ -48,7 +47,6 @@ public class SecretMenu : MonoBehaviour
 
     public void chooseLevel(InputField input)
     {
-        //input = gameObject.GetComponent<InputField>();
         inputString = input.text;
         inputNum = int.Parse(inputString);
         if (inputNum < 12 && inputNum > 0)

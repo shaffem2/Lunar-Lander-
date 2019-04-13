@@ -17,14 +17,14 @@ public class Lives : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.Find("GameManager").GetComponent<GameManager>().lives < 0)
+        if (GameManager.lives < 0)
         {
             livesText.text = "Lives: 0";                        //Prevents the lives counter from going negative
         }
 
         else
         {
-            livesText.text = "Lives: " + GameObject.Find("GameManager").GetComponent<GameManager>().lives; //Displays level
+            livesText.text = "Lives: " + GameManager.lives; //Displays level
         }
     }
 }
