@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Level : MonoBehaviour
 {
     public static int level;
-    Text levelText;
+    TextMeshProUGUI levelText;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        levelText = GetComponent<Text>();
+        levelText = GetComponent<TextMeshProUGUI>();
         level = SceneManager.GetActiveScene().buildIndex;
     }
 

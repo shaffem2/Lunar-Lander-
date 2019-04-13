@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Fuel : MonoBehaviour
 {
     public static int fuel;
-    Text fuelText;
+    TextMeshProUGUI fuelText;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        fuelText = GetComponent<Text>();
+        fuelText = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -21,4 +22,3 @@ public class Fuel : MonoBehaviour
         fuelText.text = "Fuel: " + fuel; // Displays Fuel
     }
 }
-

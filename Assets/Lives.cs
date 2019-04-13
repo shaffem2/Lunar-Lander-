@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Lives : MonoBehaviour
 {
-    Text livesText;
+    TextMeshProUGUI livesText;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        livesText = GetComponent<Text>();
+        livesText = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
