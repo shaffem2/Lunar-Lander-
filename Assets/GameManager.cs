@@ -26,8 +26,7 @@ public class GameManager : MonoBehaviour
         if (lives < 0) // if there are no more lives left, load main menu and reset life counter
         {
             lives = 3;
-            SceneManager.LoadScene("MainMenu");
-            score = 0;
+            SceneManager.LoadScene("EndScreen");
         }
 
         else
@@ -48,5 +47,10 @@ public class GameManager : MonoBehaviour
         lives = lives - 1;
         Debug.Log("One Life Removed");
         yield return new WaitForSeconds(1.0f);  // Waits 1 second
+    }
+
+    public static void ResetScore()
+    {
+        score = 0;
     }
 }

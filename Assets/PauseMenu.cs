@@ -51,6 +51,6 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Going to Main Menu!");
         GameManager.lives = 3; // Resets player lives when returning to Main Menu
         SceneManager.LoadScene("MainMenu");
-        GameManager.score = 0; // Resets score when returning to Main Menu
+        GameManager.ResetScore(); // Resets score when returning to Main Menu
     }
 }
