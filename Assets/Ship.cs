@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ship : MonoBehaviour
 {
@@ -11,11 +12,14 @@ public class Ship : MonoBehaviour
     public ParticleSystem DestructionEffect;
     public AudioSource source;
     public AudioClip thrusterAudio;
+    public Slider fuelBar;
 
     void Awake()
     {
         source = GetComponent<AudioSource>();
         source.clip = thrusterAudio;
+        GameManager.fuel = 1.0f;
+        fuelBar.value = GameManager.fuel;
     }
     
     public IEnumerator ShipGoBoom()  //this function destroys the ship with an explosion effect
@@ -33,9 +37,11 @@ public class Ship : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetAxis("Vertical") > 0.01f)
+        if ((Input.GetAxis("Vertical") > 0.05f) && GameManager.fuel > 0)
         {
             rigidShip.AddForce(transform.up * 10.0f);
+            GameManager.fuel += -0.1f * Time.deltaTime;
+            fuelBar.value = GameManager.fuel;
 
             if(!BottomThruster.isPlaying)
             {
@@ -49,9 +55,11 @@ public class Ship : MonoBehaviour
         }
 
 
-        if (Input.GetAxis("Horizontal") > 0.01f || Input.GetAxis("Horizontal") < -0.01f)
+        if ((Input.GetAxis("Horizontal") > 0.01f || Input.GetAxis("Horizontal") < -0.01f) && GameManager.fuel > 0)
         {
             rigidShip.AddForce((transform.right * 6.0f) * Input.GetAxis("Horizontal"));
+            GameManager.fuel += -0.1f * Time.deltaTime;
+            fuelBar.value = GameManager.fuel;
 
             if (!LeftThruster.isPlaying && Input.GetAxis("Horizontal") > 0.01f)
             {
@@ -75,7 +83,7 @@ public class Ship : MonoBehaviour
         }
  
         // Plays thruster audio when ship is moving
-        if(Input.GetAxis("Vertical") > 0 || Input.GetAxis("Horizontal") != 0)
+        if((Input.GetAxis("Vertical") > 0 || Input.GetAxis("Horizontal") != 0) && GameManager.fuel > 0)
         {
             if(!source.isPlaying)
             {

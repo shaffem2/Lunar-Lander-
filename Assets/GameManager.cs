@@ -7,17 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static int score;
     public static int lives = 3;
+    public static float fuel;
 
-    /*
-    void Awake()  //This function stops the GameObject GameManager from being destroyed when a new scene is loaded or the scene is restarted upon death.
-    {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("GameController");
-        if (objs.Length > 1)
-            Destroy(this.gameObject);
-
-        DontDestroyOnLoad(this.gameObject);
-    }
-    */
 
     public IEnumerator Restart()            // Level restart function
     {

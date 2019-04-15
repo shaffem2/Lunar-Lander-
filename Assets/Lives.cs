@@ -20,7 +20,7 @@ public class Lives : MonoBehaviour
     {
         if (GameManager.lives < 0)
         {
-            livesText.text = "Lives: 0";                        //Prevents the lives counter from going negative
+            livesText.text = "Lives: 0";                    //Prevents the lives counter from going negative
         }
 
         else
