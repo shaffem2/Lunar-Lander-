@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class PlatformEasy : MonoBehaviour
 {
     public Collider collider;
-    bool shouldCheckForCollision = true;
     Vector3 zero = new Vector3(0, 0, 0);
     public bool stayStill;
 
@@ -16,11 +15,11 @@ public class PlatformEasy : MonoBehaviour
 
         if (GameObject.Find("Ship") == null)
         {
-            //adding this if statement fixes box collider error by not allowing the rest of the fuction to fire after the shit is destroyed
+            //adding this if statement fixes box collider error by not allowing the rest of the fuction to fire after the ship is destroyed
         }
 
         else if (Mathf.Abs(collider.bounds.center.x - other.gameObject.GetComponent<Collider>().bounds.center.x) <=
-                 collider.bounds.extents.x - other.gameObject.GetComponent<Collider>().bounds.extents.x && shouldCheckForCollision)
+                 collider.bounds.extents.x - other.gameObject.GetComponent<Collider>().bounds.extents.x )
         {
             if (GameObject.Find("Ship").GetComponent<Rigidbody>().velocity == zero)
             {
@@ -35,7 +34,6 @@ public class PlatformEasy : MonoBehaviour
             if (stayStill)
             {
                 Debug.Log("You have LANDED!");
-                shouldCheckForCollision = false;
                 GameManager.score += 500; // Calls function to add score (500 points - easy platform)
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //load next level
             }
@@ -44,14 +42,9 @@ public class PlatformEasy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.relativeVelocity.magnitude > 2f)
+        if (collision.relativeVelocity.magnitude > 2f) //check to land softly
         {
-            StartCoroutine(GameObject.Find("Ship").GetComponent<Ship>().ShipGoBoom());                 // Calls function to blow up the ship
-            StartCoroutine(GameObject.Find("CrashAudio").GetComponent<CrashAudio>().PlayCrashAudio()); // Calls function to play crash audio
-            StartCoroutine(GameObject.Find("GameManager").GetComponent<GameManager>().TakeLife());     // Calls function to take a life away
-            StartCoroutine(GameObject.Find("GameManager").GetComponent<GameManager>().Restart());      // Calls level restart function
-            
-            Debug.Log("You have CRASHED!");
+            Ship.hasCollided = true;
         }
     }
 }

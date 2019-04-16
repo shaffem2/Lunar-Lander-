@@ -44,4 +44,16 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
     }
+
+    public IEnumerator CrashSequence()
+    {
+        StartCoroutine(GameObject.Find("Ship").GetComponent<Ship>().ShipGoBoom());                 // Calls function to blow up the ship
+        StartCoroutine(GameObject.Find("CrashAudio").GetComponent<CrashAudio>().PlayCrashAudio()); // Calls function to play crash audio
+        StartCoroutine(GameObject.Find("GameManager").GetComponent<GameManager>().TakeLife());     // Calls function to take a life away
+        StartCoroutine(GameObject.Find("GameManager").GetComponent<GameManager>().Restart());      // Calls level restart function
+        Debug.Log("You have CRASHED!");
+        Ship.hasCollided = false;
+        yield return new WaitForSeconds(1.0f);
+
+    }
 }

@@ -13,6 +13,8 @@ public class Ship : MonoBehaviour
     public AudioSource source;
     public AudioClip thrusterAudio;
     public Slider fuelBar;
+    Vector3 zero = new Vector3(0, 0, 0);
+    public static bool hasCollided = false;
 
     public void SetFuel(float value) //fucntion to set the fuel level mid game, used by fuel powerup
     {
@@ -43,6 +45,12 @@ public class Ship : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if ((GameManager.fuel < 1) && (GameObject.Find("Ship").GetComponent<Rigidbody>().velocity == zero)) //refills fuel if ship is sitting still
+        {
+            GameManager.fuel += 0.8f * Time.deltaTime; //fuel fill
+            fuelBar.value = GameManager.fuel;
+        }
+
         if ((Input.GetAxis("Vertical") > 0.05f) && GameManager.fuel > 0)
         {
             rigidShip.AddForce(transform.up * 10.0f);   //move ship
@@ -99,6 +107,14 @@ public class Ship : MonoBehaviour
         else if(source.isPlaying)
         {
             source.Stop();
+        }
+    }
+
+    private void Update()
+    {
+        if (hasCollided) //by checking if the ship has collided every frame, it prevents two collisions happening at once.
+        {
+            StartCoroutine(GameObject.Find("GameManager").GetComponent<GameManager>().CrashSequence()); //calls crash sequence function from gamemanager
         }
     }
 }
