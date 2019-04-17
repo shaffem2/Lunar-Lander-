@@ -22,8 +22,14 @@ public class LivesGUI : MonoBehaviour
 
             else
             {
-                livesText.text = "Lives: " + GameManager.lives; //Displays level
+                livesText.text = "Lives: " + GameManager.lives; //Displays lives
             }
         }
+    }
+
+    public void updateLives ()
+    {
+        livesText.text = "Lives: " + GameManager.lives;
+        return;
     }
 }

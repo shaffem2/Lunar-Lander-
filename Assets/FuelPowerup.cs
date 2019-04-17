@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FuelPowerup : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter()
     {
         GameObject.Find("Ship").GetComponent<Ship>().SetFuel(1);
         Destroy(this.gameObject);
