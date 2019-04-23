@@ -45,7 +45,7 @@ public class Ship : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if ((GameManager.fuel < 1) && (GameObject.Find("Ship").GetComponent<Rigidbody>().velocity == zero)) //refills fuel if ship is sitting still
+        if ((GameManager.fuel < 1) && (Input.GetAxis("Vertical") < 0.01f) && (GameObject.Find("Ship").GetComponent<Rigidbody>().velocity == zero)) //refills fuel if ship is sitting still
         {
             GameManager.fuel += 0.8f * Time.deltaTime; //fuel fill
             fuelBar.value = GameManager.fuel;
