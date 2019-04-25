@@ -7,12 +7,15 @@ using UnityEngine.UI;
 public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
+    public Slider musicSlider;
+    public Toggle fullscreenToggle;
+    public Dropdown qualityDropdown;
     public Dropdown resolutionDropdown;
-    //Resolution[] resolutions; // Array of available resolutions
     Resolution[] resolutions;
+    private int fullscreenSwitch = 1;
 
     void Start()
-    {
+    {   
         resolutions = Screen.resolutions; // Obtains list of all available resolutions for user's computer
         resolutionDropdown.ClearOptions(); // Clears any resolutions in dropdown menu
 
@@ -34,24 +37,49 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options); // AddOptions only takes strings
         resolutionDropdown.value = currentResolutionIndex; // Sets current resolution on the dropdown bar to your computer's resolution
         resolutionDropdown.RefreshShownValue();
+
+        // Get last positions/values of UI
+        musicSlider.value = PlayerPrefs.GetFloat("volume");
+        qualityDropdown.value = PlayerPrefs.GetInt("quality");
+        resolutionDropdown.value = PlayerPrefs.GetInt("resolution");
+        fullscreenSwitch = PlayerPrefs.GetInt("fullscreen");
+        if (fullscreenSwitch == 1)
+        {
+            fullscreenToggle.isOn = true;
+        }
+        else
+        {
+            fullscreenToggle.isOn = false;
+        }
     }
-    
-    //Sets volume in the master audio mixer
-    public void SetVolume (float sliderValue)
+
+    // Sets volume in the master audio mixer
+    public void SetVolume(float value)
     {
-        audioMixer.SetFloat("volume", Mathf.Log10(sliderValue) * 20);
+        audioMixer.SetFloat("volume", Mathf.Log10(value) * 20);
+        PlayerPrefs.SetFloat("volume", value);
     }
-    
-    //Sets game quality (Low/Medium/High)
-    public void SetQuality (int qualityIndex)
+
+    // Sets game quality (Low/Medium/High)
+    public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
+        PlayerPrefs.SetInt("quality", qualityIndex);
     }
 
     // Toggles fullscreen
-    public void SetFullscreen (bool isFullscreen)
+    public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+        if (isFullscreen)
+        {
+            fullscreenSwitch = 1;
+        }
+        else
+        {
+            fullscreenSwitch = 0;
+        }
+        PlayerPrefs.SetInt("fullscreen", fullscreenSwitch);
     }
 
     // Sets screen resolution for game
@@ -59,5 +87,11 @@ public class SettingsMenu : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        PlayerPrefs.SetInt("resolution", resolutionIndex);
+    }
+    
+    private void OnDisable()
+    {
+        PlayerPrefs.Save();
     }
 }

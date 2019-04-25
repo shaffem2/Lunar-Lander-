@@ -546,7 +546,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320a7bb99ca3c014e9c182436726ff86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: c466ad86993325b42b8256e43e2cee25, type: 2}
+  musicSlider: {fileID: 2027725262}
+  fullscreenToggle: {fileID: 1605665972}
+  qualityDropdown: {fileID: 1404901235}
   resolutionDropdown: {fileID: 1013979085}
 --- !u!1 &167115932
 GameObject:
@@ -2698,6 +2701,7 @@ GameObject:
   - component: {fileID: 1013979088}
   - component: {fileID: 1013979087}
   - component: {fileID: 1013979085}
+  - component: {fileID: 1013979089}
   m_Layer: 5
   m_Name: ResolutionDropdown
   m_TagString: Untagged
@@ -2827,6 +2831,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013979084}
   m_CullTransparentMesh: 0
+--- !u!114 &1013979089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013979084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320a7bb99ca3c014e9c182436726ff86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: c466ad86993325b42b8256e43e2cee25, type: 2}
+  musicSlider: {fileID: 2027725262}
+  fullscreenToggle: {fileID: 1605665972}
+  qualityDropdown: {fileID: 1404901235}
+  resolutionDropdown: {fileID: 1013979085}
 --- !u!1 &1026525311
 GameObject:
   m_ObjectHideFlags: 0
@@ -4461,6 +4482,7 @@ GameObject:
   - component: {fileID: 1404901237}
   - component: {fileID: 1404901236}
   - component: {fileID: 1404901235}
+  - component: {fileID: 1404901238}
   m_Layer: 5
   m_Name: QualityDropdown
   m_TagString: Untagged
@@ -4600,6 +4622,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404901233}
   m_CullTransparentMesh: 0
+--- !u!114 &1404901238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404901233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320a7bb99ca3c014e9c182436726ff86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: c466ad86993325b42b8256e43e2cee25, type: 2}
+  musicSlider: {fileID: 2027725262}
+  fullscreenToggle: {fileID: 1605665972}
+  qualityDropdown: {fileID: 1404901235}
+  resolutionDropdown: {fileID: 1013979085}
 --- !u!1 &1416034641
 GameObject:
   m_ObjectHideFlags: 0
@@ -5324,6 +5363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1605665971}
   - component: {fileID: 1605665972}
+  - component: {fileID: 1605665973}
   m_Layer: 5
   m_Name: FullscreenToggle
   m_TagString: Untagged
@@ -5409,6 +5449,23 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
+--- !u!114 &1605665973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605665970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320a7bb99ca3c014e9c182436726ff86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: c466ad86993325b42b8256e43e2cee25, type: 2}
+  musicSlider: {fileID: 2027725262}
+  fullscreenToggle: {fileID: 1605665972}
+  qualityDropdown: {fileID: 1404901235}
+  resolutionDropdown: {fileID: 1013979085}
 --- !u!1 &1607569970
 GameObject:
   m_ObjectHideFlags: 0
@@ -6878,7 +6935,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2027725263}
+      - m_Target: {fileID: 135069686}
         m_MethodName: SetVolume
         m_Mode: 0
         m_Arguments:
@@ -6904,6 +6961,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: c466ad86993325b42b8256e43e2cee25, type: 2}
+  musicSlider: {fileID: 2027725262}
+  fullscreenToggle: {fileID: 1605665972}
+  qualityDropdown: {fileID: 1404901235}
   resolutionDropdown: {fileID: 1013979085}
 --- !u!1 &2053328584
 GameObject:
